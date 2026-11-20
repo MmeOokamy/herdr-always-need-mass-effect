@@ -1,0 +1,10 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Generated locally
+*.log
+*.tmp
+
+# Type declarations written by gpui-shell on every start
+gpui-kit.d.ts

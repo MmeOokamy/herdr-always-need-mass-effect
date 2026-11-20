@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200">
+  <defs>
+    <radialGradient id="room" cx="56%" cy="46%" r="70%">
+      <stop offset="0" stop-color="#1a2430"/>
+      <stop offset="1" stop-color="#030507"/>
+    </radialGradient>
+  </defs>
+  <rect width="320" height="200" fill="url(#room)"/>
+  <g fill="none" stroke="#8fb4d8">
+    <circle cx="180" cy="92" r="26" stroke-opacity=".5"/>
+    <circle cx="180" cy="92" r="48" stroke-opacity=".3"/>
+    <circle cx="180" cy="92" r="78" stroke-opacity=".18" stroke-width="4"/>
+  </g>
+  <line x1="0" y1="14" x2="320" y2="14" stroke="#8fb4d8" stroke-opacity=".35"/>
+  <path d="M10 9 h22 l3 5 l-3 5 h-22 l-3 -5 z" fill="#1a2129" stroke="#8a9bb0"/>
+  <path d="M42 9 h40 l3 5 l-3 5 h-40 l-3 -5 z" fill="#1a2129" stroke="#8a9bb0"/>
+  <rect x="128" y="9" width="64" height="9" rx="1" fill="#e8eef5" fill-opacity=".85"/>
+  <path d="M262 9 h48 l3 5 l-3 5 h-48 l-3 -5 z" fill="#1a2129" stroke="#8a9bb0"/>
+  <rect x="8" y="26" width="56" height="134" fill="#0b1016" fill-opacity=".85" stroke="#56667a"/>
+  <g fill="#b4c0cd" fill-opacity=".7">
+    <rect x="14" y="34" width="38" height="4"/><rect x="14" y="44" width="30" height="4"/>
+    <rect x="14" y="54" width="34" height="4"/>
+  </g>
+  <circle cx="36" cy="82" r="9" fill="#d8332a" fill-opacity=".8"/>
+  <rect x="72" y="26" width="240" height="10" fill="#0f151c" stroke="#56667a" stroke-opacity=".6"/>
+  <rect x="72" y="40" width="117" height="120" fill="#080c11" fill-opacity=".9" stroke="#5fb0ff" stroke-width="1.5"/>
+  <rect x="195" y="40" width="117" height="120" fill="#080c11" fill-opacity=".9" stroke="#56667a"/>
+  <g fill="#dfe6ee" fill-opacity=".55">
+    <rect x="80" y="52" width="70" height="3"/><rect x="80" y="60" width="90" height="3"/>
+    <rect x="80" y="68" width="54" height="3"/><rect x="203" y="52" width="80" height="3"/>
+    <rect x="203" y="60" width="60" height="3"/>
+  </g>
+  <path d="M16 172 h288 l8 26 h-304 z" fill="#0b1118" fill-opacity=".9" stroke="#8a9bb0"/>
+  <path d="M132 166 h56 l4 5 l-4 5 h-56 l-4 -5 z" fill="#1a2129" stroke="#8a9bb0"/>
+  <g fill="#ffffff" fill-opacity=".8">
+    <rect x="96" y="182" width="40" height="3"/><rect x="96" y="189" width="32" height="3"/>
+    <rect x="186" y="182" width="40" height="3"/><rect x="186" y="189" width="32" height="3"/>
+  </g>
+</svg>
