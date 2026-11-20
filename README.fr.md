@@ -27,9 +27,27 @@ couleurs.
 | au centre | les onglets, puis les volets : cadre ambré, cadre vert pour le volet qui a le clavier (comme la cible de l'écran de piratage) |
 | en bas (`me-hud`, rôle `resources`) | le panneau « Ressources » : agents au travail, en attente, terminés, au repos ; usage de Claude Code (session, semaine) ; nombre d'espaces et d'onglets. Un clic sur « En attente » affiche l'agent qui attend |
 
-La barre latérale, les onglets, les en-têtes des volets et les notifications
-sont les mods de Herdr ; seuls la barre de titre et le panneau du bas sont
-dessinés par `me-hud`, la fenêtre des sessions par `me-sessions`.
+La barre latérale, les onglets et les en-têtes des volets sont les mods de
+Herdr ; la barre de titre et le panneau du bas sont dessinés par `me-hud`,
+la fenêtre des sessions par `me-sessions`, les notifications par
+`me-toast`.
+
+## Les notifications
+
+Les notifications de Herdr (un agent a fini ou a besoin de toi, une commande
+a échoué...) montrent Glyph à gauche, le drone holographique de la mascotte
+d'odoo-badge-reminder, dans un cadre aux couleurs du layout affiché :
+
+| Glyph | Quand |
+|---|---|
+| bleu | information, agent qui a fini |
+| orange, cadre orange | avertissement, agent qui a besoin de toi |
+| orange à lentille rouge, cadre orange | erreur |
+
+Comme celles de Herdr, un clic affiche l'agent et ferme la notification.
+Les images (`me-toast/glyph/`) sont rendues par
+`me-toast/tools/render_glyph.py`, à partir du code de dessin
+d'odoo-badge-reminder.
 
 **L'usage de Claude Code** est lu dans `~/.cache/usage-cat/state.json`, que
 remplit la status line de herdr-always-need-cats,
@@ -74,7 +92,7 @@ python3 install.py --style me1  # affiche normandy-sr1 (me2 : mission-computer, 
 Prérequis : Herdr, Python 3.9+. Pillow n'est utile que pour régénérer le
 fond.
 
-Le script relie les mods `me-hud` et `me-sessions` dans
+Le script relie les mods `me-hud`, `me-sessions` et `me-toast` dans
 `~/.config/herdr-app/mods`, copie chaque thème en
 `~/.config/herdr-app/themes/<layout>.json`, écrit
 `~/.config/herdr-app/layouts/<layout>.json` pour les trois layouts et en
@@ -102,6 +120,8 @@ python3 install.py --uninstall
 | `me-sessions/main.js` | fenêtre des sessions Claude |
 | `me-sessions/sessions.py` | lecture des sessions (avec cache), suppression |
 | `me-sessions/normandy.svg` | le picto de la Normandy |
+| `me-toast/main.js` | les notifications |
+| `me-toast/glyph/` | Glyph, une image par état, rendue par `me-toast/tools/render_glyph.py` |
 | `me-hud/theme.json`, `theme-me1.json`, `theme-me3.json` | les thèmes (couleurs du terminal et des mods) de `mission-computer`, `normandy-sr1` et `war-room` |
 | `me-hud/img/bg.png`, `bg-me1.png`, `bg-me3.png` | les fonds, générés par `me-hud/tools/make_art.py` |
 | `me-hud/preview.svg`, `preview-me1.svg`, `preview-me3.svg` | les aperçus montrés dans les réglages de Herdr |

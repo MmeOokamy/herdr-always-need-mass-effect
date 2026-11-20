@@ -26,9 +26,26 @@ switch between them; the shown game's plate is lit. What follows describes
 | centre | tabs, then panes: amber frame, green frame for the pane with the keyboard (like the hacking screen's target) |
 | bottom (`me-hud`, role `resources`) | the "Resources" panel: agents working, waiting, done, idle; Claude Code usage (session, week); number of spaces and tabs. Clicking "Waiting" shows the waiting agent |
 
-The sidebar, tabs, pane headers and notifications are Herdr's own mods; only
-the title bar and the bottom panel are drawn by `me-hud`, the sessions
-window by `me-sessions`.
+The sidebar, tabs and pane headers are Herdr's own mods; the title bar and
+the bottom panel are drawn by `me-hud`, the sessions window by
+`me-sessions`, the notifications by `me-toast`.
+
+## Notifications
+
+Herdr's notifications (an agent has finished or needs you, a command has
+failed...) show Glyph on the left, the holographic drone of the
+odoo-badge-reminder mascot, framed in the colors of the shown layout:
+
+| Glyph | When |
+|---|---|
+| blue | information, an agent that has finished |
+| orange, orange frame | warning, an agent that needs you |
+| orange with a red lens, orange frame | error |
+
+As with Herdr's own, a click shows the agent and closes the notification.
+The images (`me-toast/glyph/`) are rendered by
+`me-toast/tools/render_glyph.py`, from the drawing code of
+odoo-badge-reminder.
 
 **Claude Code usage** is read from `~/.cache/usage-cat/state.json`, written
 by the status line of herdr-always-need-cats, herdr-always-need-archives
@@ -72,7 +89,7 @@ python3 install.py --style me1  # show normandy-sr1 (me2: mission-computer, me3:
 Requirements: Herdr, Python 3.9+. Pillow is only needed to regenerate the
 background.
 
-The script links the `me-hud` and `me-sessions` mods into
+The script links the `me-hud`, `me-sessions` and `me-toast` mods into
 `~/.config/herdr-app/mods`, copies each theme to
 `~/.config/herdr-app/themes/<layout>.json`, writes
 `~/.config/herdr-app/layouts/<layout>.json` for the three layouts and shows one:
@@ -100,6 +117,8 @@ python3 install.py --uninstall
 | `me-sessions/main.js` | the Claude sessions window |
 | `me-sessions/sessions.py` | reads the sessions (with a cache), deletes one |
 | `me-sessions/normandy.svg` | the Normandy icon |
+| `me-toast/main.js` | the notifications |
+| `me-toast/glyph/` | Glyph, one image per state, rendered by `me-toast/tools/render_glyph.py` |
 | `me-hud/theme.json`, `theme-me1.json`, `theme-me3.json` | the themes (terminal and mod colors) of `mission-computer`, `normandy-sr1` and `war-room` |
 | `me-hud/img/bg.png`, `bg-me1.png`, `bg-me3.png` | the backgrounds, drawn by `me-hud/tools/make_art.py` |
 | `me-hud/preview.svg`, `preview-me1.svg`, `preview-me3.svg` | the previews shown in Herdr's settings |

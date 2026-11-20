@@ -11,7 +11,7 @@
 Each layout has its own theme; the "ME1" / "ME2" / "ME3" plates of the
 title bar switch between them.
 
-1. Links the me-hud and me-sessions mods into ~/.config/herdr-app/mods
+1. Links the me-hud, me-sessions and me-toast mods into ~/.config/herdr-app/mods
    (symbolic links: a change made here is picked up live) and checks them.
 2. Copies each theme (me-hud/theme.json, theme-me1.json, theme-me3.json) to
    ~/.config/herdr-app/themes/<layout>.json: named like its layout, it is
@@ -25,7 +25,8 @@ title bar switch between them.
 
 The layouts use Herdr's own mods for the sidebar, tabs, panes and
 notifications; me-hud draws the title bar and the "Resources" panel;
-me-sessions lists the Claude Code sessions (the Normandy button).
+me-sessions lists the Claude Code sessions (the Normandy button); me-toast
+shows the notifications, with Glyph the holographic drone.
 
 Usage: python3 install.py [--lang fr|en] [--style me1|me2|me3]
        python3 install.py --uninstall
@@ -41,7 +42,7 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 HERDR = os.path.join(os.path.expanduser("~"), ".config", "herdr-app")
 MOD = "me-hud"
-MODS = (MOD, "me-sessions")
+MODS = (MOD, "me-sessions", "me-toast")
 KEYS_FILE = os.path.join(HERDR, "keys.json")
 # (key, action, role): added to each layout's section of keys.json only if
 # the key is free there.
@@ -161,6 +162,7 @@ def layout(style, lang):
         "titlebar": "none",
         "traffic_lights": [12, 22],
         "preview": f"mods/{MOD}/{s['preview']}",
+        "toast": "me-toast",
     }
 
 
